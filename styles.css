@@ -1,0 +1,94 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  header {
+    background-color: #000000;
+    color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .subtitulo {
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  .acessibilidade {
+    margin-top: 15px;
+  }
+  
+  .acessibilidade button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .acessibilidade button:hover {
+    background-color: #ffcc00;
+  }
+  
+  main {
+    margin-top: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+  
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #000000;
+    color: #FFD700;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  /* Acessibilidade - Modo Contraste */
+  .contraste {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  .contraste header {
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+  }
+  
+  .contraste .acessibilidade button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .contraste footer {
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+  }

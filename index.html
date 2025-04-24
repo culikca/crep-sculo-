@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moda para Todos</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: #000;
+      color: #FFD700;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .subtitulo {
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .acessibilidade {
+      margin-top: 15px;
+    }
+
+    .acessibilidade button {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    main {
+      margin-top: 30px;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      background-color: #000;
+      color: #FFD700;
+      padding: 15px;
+    }
+
+    /* Alto Contraste */
+    .contraste {
+      background-color: #000 !important;
+      color: #FFF !important;
+    }
+
+    .contraste header {
+      background-color: #FFD700 !important;
+      color: #000 !important;
+    }
+
+    .contraste .acessibilidade button {
+      background-color: #FFF !important;
+      color: #000 !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moda para Todos</h1>
+    <p class="subtitulo">Estilo, inclusão e empoderamento!</p>
+
+    <div class="acessibilidade">
+      <button onclick="toggleContraste()">Alto Contraste</button>
+      <button onclick="aumentarFonte()">A+</button>
+      <button onclick="diminuirFonte()">A-</button>
+      <button onclick="lerTexto()">Ouvir Conteúdo</button>
+    </div>
+  </header>
+
+  <main tabindex="0">
+    <section>
+      <h2>Moda sem Barreiras</h2>
+      <p id="conteudo">
+        Todas as pessoas têm direito de se expressar com liberdade através do estilo. Aqui você encontra dicas, looks e tendências pensadas para todos os corpos, vivências e habilidades.
+      </p>
+      <img src="https://i.imgur.com/KzG6VgC.jpg" alt="Modelo estilosa com roupa vibrante e acessório moderno" />
+    </section>
+
+    <section>
+      <h2>Dicas Fashion Inclusivas</h2>
+      <ul>
+        <li>Roupas com fechamento magnético para quem tem limitação motora</li>
+        <li>Moda tátil com texturas diferentes para pessoas com deficiência visual</li>
+        <li>Looks com acessibilidade auditiva: QR code que descreve a peça</li>
+        <li>Cores contrastantes para melhor identificação visual</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com amor para você brilhar do seu jeito!</p>
+  </footer>
+
+  <!-- JavaScript direto no index -->
+  <script>
+    let contrasteAtivo = false;
+    let fonte = 16;
+
+    function toggleContraste() {
+      contrasteAtivo = !contrasteAtivo;
+      document.body.classList.toggle("contraste", contrasteAtivo);
+    }
+
+    function aumentarFonte() {
+      fonte += 2;
+      document.body.style.fontSize = fonte + "px";
+    }
+
+    function diminuirFonte() {
+      if (fonte > 12) {
+        fonte -= 2;
+        document.body.style.fontSize = fonte + "px";
+      }
+    }
+
+    function lerTexto() {
+      const texto = document.getElementById("conteudo").textContent;
+      const fala = new SpeechSynthesisUtterance(texto);
+      fala.lang = 'pt-BR';
+      speechSynthesis.speak(fala);
+    }
+  </script>
+</body>
+</html>
